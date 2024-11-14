@@ -1,0 +1,44 @@
+@startuml practica2
+
+Class Persona
+Class Jugador
+Class Entrenador
+Class Equipo
+CLass Juego
+
+
+Class Persona{
+Telefono: Int
+Nombre: String
+Direccion: String
+}
+
+Class Jugador{
+Numero: Int
+Posicion: String
+}
+
+Class Entrenador{
+NumExp : Int
+NiveldeAcreditacion : Int
+}
+
+Class Equipo{
+Nombre: String
+Registro: Int
+Capitan : String
+}
+
+Class Juego{
+Localidad: String
+Puntuacion: Float
+}
+
+
+Persona <|-- Entrenador
+Persona <|-- Jugador
+Equipo "1" *-- "6...20" Jugador : tiene
+Entrenador "1" -- "1..*" Equipo : Entrena
+Juego  "1" o-- "2" Equipo : compite
+
+@enduml 

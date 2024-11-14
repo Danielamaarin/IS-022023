@@ -1,0 +1,71 @@
+@startuml DiagramaObj
+
+object Juego {
+localidad = "Chile"
+puntuacion = "."
+}
+
+object Equipo1{
+nombre = "Venezuela"
+registro ="123"
+capitan = "Jose"
+}
+
+object Jugador1V{
+Num="1"
+Posicion="Colocador"
+}
+object Jugador2V{
+Num="2"
+Posicion="Central"
+}
+object Jugador3V{
+Num="3"
+Posicion="Libero"
+}
+
+object Entrenador1{
+nombre = "Juan"
+NiveldeAcreditacion = "2"
+YearsExp = "5"
+}
+
+
+object Equipo2{
+nombre = "Colombia"
+registro ="456"
+capitan = "Manuel"
+}
+
+object Entrenador2{
+nombre = "Pedro"
+NiveldeAcreditacion = "2"
+YearsExp = "3"
+}
+
+object Jugador1C{
+Num="4"
+Posicion="Colocador"
+}
+object Jugador2C{
+Num="5"
+Posicion="Central"
+}
+object Jugador3C{
+Num="6"
+Posicion="Libero"
+}
+
+Juego *-- Equipo1
+Juego *-- Equipo2
+Equipo1 o-- Jugador1V
+Equipo1 o-- Jugador2V
+Equipo1 o-- Jugador3V
+Equipo1 o-- Entrenador1
+
+Equipo2 o-- Jugador1C
+Equipo2 o-- Jugador2C
+Equipo2 o-- Jugador3C
+Equipo2 o-- Entrenador2
+
+@enduml
