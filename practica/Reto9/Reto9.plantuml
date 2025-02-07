@@ -1,0 +1,44 @@
+@startuml reto9
+
+interface Connectable{
++turnOn()
++turnOff()
++isOn()
+}
+
+class TurnOnDevices{
++main(String[] atgs)
++turnOnDevice(Connectable device)
+}
+
+class Lamp{
++turnOn()
++turnOff()
++isOn()
+}
+class Computer{
++turnOn()
++turnOff()
++isOn()
+}
+
+class CoffeMaker{
++on()
++off()
++isOff()
+}
+
+class CoffeMakerAdapter{
++turnOn()
++turnOff()
++isOn()
+}
+
+Connectable <|-- Lamp
+Connectable <|-- Computer
+Connectable <|-- CoffeMakerAdapter
+
+CoffeMaker --> CoffeMakerAdapter
+TurnOnDevices --> Connectable
+
+@enduml
